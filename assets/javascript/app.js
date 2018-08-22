@@ -1,3 +1,24 @@
+var playerKey = document.getElementById("answer");
+var reg = /[^0-9]/;
+
+// Next, we give JavaScript a function to execute when onkeyup event fires.
+document.onkeyup = function (event) {
+
+    var e = event.key;
+
+    if (/[^0-9]/.test(e)) {
+
+        alert("This is not a valid choice...");
+
+    } else {
+
+        playerKey.value = e;
+
+    }
+
+};
+
+
 // my turn
 
 n = 6;
@@ -53,6 +74,14 @@ var questions = [
         ca: 1
 
     },
+
+    {
+
+        qu: "What color are her eyes?",
+        an: { 0: "brown", 1: "red", 2: "green", 3: "yellow" },
+        ca: 1
+
+    }
 ] // end questions
 
 z = 0;
@@ -69,6 +98,7 @@ gq();
 
 function clearList() {
     $("#answers").empty();
+    playerKey.value = "";
     console.log("am i even really here??");
 }
 
@@ -95,13 +125,18 @@ var ga = function() {
 
 ga();
 
-
+function resetClock() {
+    clearTimeout(countDown);
+    n = 6;
+    countDown();
+}
 
 $("#result").on("click", function () {
     z++;
     gq();
     y++;
     ga();
+    resetClock();
 }) // end function
 
 function reset() {
@@ -110,6 +145,7 @@ function reset() {
     gq();
     y++;
     ga();
+    resetClock();
 }
 
 

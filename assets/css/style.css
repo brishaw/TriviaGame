@@ -103,6 +103,7 @@ code {
   background-color: #003e9a;;
   border-color: #003e9a;
   color: #ffffff;
+  margin-bottom: 10px;
 }
 
 .btn-mine:hover {
@@ -122,4 +123,8 @@ code {
 .questions {
   font-size: 4rem;
   text-align: center;
+}
+
+.list-style li {
+  text-align: left;
 }
