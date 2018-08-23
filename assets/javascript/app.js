@@ -143,16 +143,16 @@ function checkAnswer() {
 
         correctAnswers++;
 
-        $("#wtf").text("Correct!").css({"position": "absolute", "top": "100px", "left": "0"});
-        setTimeout(function () { $("#wtf").text(""); }, 1000);
+        $("#wtf").text("Correct!").css({"display" : "block", "position": "absolute", "left": "50%", "-webkit-transform" : "translate(-50%)", "transform" : "translateX(-50%)", "padding" : "50px 200px", "background-color" : "rgba(0,0,0,.7)", "z-index" : "10000", "color" : "white"});
+        setTimeout(function () { $("#wtf").text("").css("display", "none"); }, 1000);
         
 
     } else {
 
         incorrectAnswers++;
 
-        $("#wtf").text("Incorrect!").css({ "position": "absolute", "top": "100px", "left": "0","color": "red" });
-        setTimeout(function () { $("#wtf").text(""); }, 1000);
+        $("#wtf").text("Incorrect!").css({ "display": "block", "position": "absolute", "left": "50%", "-webkit-transform": "translate(-50%)", "transform": "translateX(-50%)", "padding": "50px 200px", "background-color": "rgba(0,0,0,.7)", "z-index": "10000", "color" : "red"});
+        setTimeout(function () { $("#wtf").text("").css("display", "none") }, 1000);
     }
 }
 
