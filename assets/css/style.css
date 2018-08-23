@@ -44,8 +44,20 @@ code {
 
 /****** memememememememe ******/
 
+.screen-1 {
+  display: block;
+}
+
+.screen-2 {
+  display: none;
+}
+
 .fc-white {
   color: #ffffff; 
+}
+
+.fc-dk-gray {
+  color: #5a5a5a;
 }
 
 .fs-2rem {
@@ -120,6 +132,21 @@ code {
   border-radius: 0;
 }
 
+.my-grad-2 {
+  background-image:
+    radial-gradient(
+      #ffe006,
+      #f16f03
+    );
+  border-radius: 0;
+}
+
+.right {
+
+  background-color: green;
+
+}
+
 .questions {
   font-size: 4rem;
   text-align: center;
@@ -127,4 +154,10 @@ code {
 
 .list-style li {
   text-align: left;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
