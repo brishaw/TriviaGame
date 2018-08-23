@@ -153,6 +153,8 @@ function checkAnswer() {
 
         $("#wtf").text("Incorrect!").css({ "display": "block", "position": "absolute", "left": "50%", "-webkit-transform": "translate(-50%)", "transform": "translateX(-50%)", "padding": "50px 200px", "background-color": "rgba(0,0,0,.7)", "z-index": "10000", "color" : "red"});
         setTimeout(function () { $("#wtf").text("").css("display", "none") }, 1000);
+
+        
     }
 }
 
