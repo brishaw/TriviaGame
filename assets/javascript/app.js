@@ -1,5 +1,7 @@
 function init() {
-    console.log("running init()...")
+    console.log("running init()...");
+    z = 0;
+    y = 0;
 }
 
 var correctAnswers = 0;
@@ -167,15 +169,13 @@ var gq = function() {
 
             console.log("lets play again!");
             
-            init();
+            window.location.reload(false);
         })
     }
 
 }
 
-
 gq();
-
 
 function clearList() {
 
@@ -185,8 +185,6 @@ function clearList() {
 
     console.log("am i even really here??");
 }
-
-
 
 // show answers
 
@@ -208,8 +206,6 @@ var ga = function() {
 }
 
 ga();
-
-
 
 function resetClock() {
 
@@ -285,8 +281,6 @@ function reset() {
 
     resetClock();
 }
-
-
 
 function flip() {
 
