@@ -1,5 +1,5 @@
 function init() {
-    console.log("running init()...");
+    //console.log("running init()...");
     z = 0;
     y = 0;
 }
@@ -49,7 +49,7 @@ function decrement() {
     //  Once number hits zero...
     if (n === 0) {
 
-        //  ...run the stop function.
+        //  ...run the reset function.
         reset();
 
     }
@@ -146,8 +146,8 @@ var lastQuestion = questions[questions.length - 1];
 
 var questionObject = questions.length;
 
-console.log("Number of questions..." + questionObject);
-console.log(lastQuestion);
+//console.log("Number of questions..." + questionObject);
+//console.log(lastQuestion);
 
 z = 0;
 
@@ -167,7 +167,7 @@ var gq = function() {
         
         $("#so").on("click", function() {
 
-            console.log("lets play again!");
+            //console.log("lets play again!");
             
             window.location.reload(false);
         })
@@ -183,7 +183,7 @@ function clearList() {
 
     playerKey.value = "";
 
-    console.log("am i even really here??");
+    //console.log("am i even really here??");
 }
 
 // show answers
@@ -196,7 +196,7 @@ var ga = function() {
 
     var size = Object.keys(questions[y].an).length;
 
-    console.log("size: " + size);
+    //console.log("size: " + size);
 
     for(i = 0; i < size; i++) {
 
@@ -220,7 +220,7 @@ function resetClock() {
 
 function checkAnswer() {
 
-    console.log(questions[y]);
+    //console.log(questions[y]);
     
     if (playerKey.value == questions[y].ca) {
 
@@ -267,7 +267,7 @@ $("#result").on("click", function () {
 
 function reset() {
 
-    console.log("running reset....???");
+    //console.log("running reset....???");
 
     checkAnswer();
 
