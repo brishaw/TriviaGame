@@ -9,19 +9,13 @@
     <body>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <a class="navbar-brand" href="#">Trivia Game</a>
-        </nav>
-        
-        <main role="main">
-        
+        </nav>      
+        <main role="main">    
             <!-- Main jumbotron for a primary marketing message or call to action -->
             <div class="screen-1">
                 <div class="jumbotron my-grad fc-white p_rel">
                     <div class="container">
-                        <h1 id="countdown" class="display-3 cd-style ss_fs"></h1>
-                        <h3 id="wtf"></h3>
-                        <p><a class="btn btn-secondary nq" href="#" role="button"></a></p>
                         <p id="game-question" class="questions"></p>
-
                         <div class="row">
                             <div class="col-md-4"></div>
                             <div class="col-md-4 center">
@@ -36,11 +30,9 @@
                     </div>
                 </div>
             </div><!-- end screen-1-->
-
             <div class="screen-2">
                 <div class="jumbotron my-grad-2 fc-dk-gray p_rel">
-                    <div class="container">
-                        
+                    <div class="container">          
                         <div class="row">
                             <div class="col-md-8">
                                 <h1 class="display-3 ss_fs">Congratulations</h1>
@@ -56,30 +48,18 @@
                     </div>
                 </div>
             </div> <!-- end screen-2 -->
-
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
-                        <h2>British Empire</h2>
-                        <p>Pulled a right corker scrumpy doing my head in owt chap pillock got his end away, codswallop what a doddle it's the dogs bollocks gob.</p>
-                        <p><a id="test" class="btn btn-secondary" href="#" role="button">Play category &raquo;</a></p>
+                    <div class="col-md-6 br-gray">
+                        <p id="solution"></p>
                     </div>
-                    <div class="col-md-4">
-                        <h2>Vegetarian</h2>
-                        <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. </p>
-                        <p><a class="btn btn-secondary" href="#" role="button">Play category &raquo;</a></p>
-                    </div>
-                    <div class="col-md-4">
-                        <h2>Carl Sagan</h2>
-                        <p>Bits of moving fluff the carbon in our apple pies venture Cambrian explosion light years laws of physics. Courage of our questions paroxysm of global death. </p>
-                        <p><a class="btn btn-secondary" href="#" role="button">Play category &raquo;</a></p>
+                    <div class="col-md-6">
+                        <h1 id="countdown" class="display-3 cd-style ss_fs"></h1> 
                     </div>
                 </div>
                 <hr>
-            </div> <!-- /container -->
-        
-        </main>
-        
+            </div> <!-- /container -->  
+        </main>     
         <footer class="footer">
             <div class="container">
                 <span class="text-muted">2018 Brian Shaw</span>

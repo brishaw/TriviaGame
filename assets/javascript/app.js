@@ -16,35 +16,33 @@ document.onkeyup = function (event) {
 
 };
 
-
-// my turn
-
-
 // *** the timer *** 
 //------------------//
 
-var n = 10;
+var n = 15;
+
 var intervalId;
 
 function countDown() {
+
     if (!intervalId) {
+
         intervalId = setInterval(decrement, 1000);
     }
 }
 
 //  The decrement function.
+
 function decrement() {
 
     //  Decrease number by one.
+
     n--;
 
-    //  Show the number in the #show-number tag.
-    $('#countdown').text(n);
-    // $('#countdown').fadeOut(300, function () {
-    //      $('#countdown').text(n);
-    //      $('#countdown').show();  
-    //  });
-
+    $('#countdown').fadeOut(300, function () {
+         $('#countdown').text(n);
+         $('#countdown').show();  
+     });
 
     //  Once number hits zero...
     if (n === 0) {
@@ -56,38 +54,6 @@ function decrement() {
 }
 
 countDown();
-// function countDown() {
-   
-//     n--;
-//     if (n > 0) {
-//         setTimeout(countDown, 1000);
-//     } else if ( n === 0) {
-//         //$("#timer").text("Done");
-//         reset();
-//     }
-    
-//     $('#countdown').fadeOut(300, function () {
-//         $('#countdown').text(n);
-//         $('#countdown').show();  
-//     });
-// }
-// countDown();
-
-
-// var count = 5;
-// var interval = setInterval (function() {
-
-//     $("#countdown").text(count);
-//     count--;
-//     if (count === -1) {
-//         clearInterval(interval);
-
-//         $("#timer").text("Done.");
-
-//     }
-// }, 1000);
-
-
 
 // questions and answers
 
@@ -95,45 +61,112 @@ var questions = [
     
     {
 
-    qu : "How old am I?",
-    an : { 0 : "1", 1 : "2", 2 : "3" },
+        qu: "What was Elton John's first US No 1 hit?",
+        an: { 0: "Hell's Bells", 1: "Crocodile Rock", 2: "Candle in the Wind" },
     ca : 2
 
     },
 
     {
 
-        qu: "How old are you?",
-        an: { 0 : "10", 1 : "20", 2 : "35", 3 : "44" },
+        qu: "Who founded the Death Row label with Marion 'Suge' Knight?",
+        an: { 0: "Eminem", 1: "Snoop Dogg", 2: "Dr. Dre", 3 : "Kool Moe Dee" },
+        ca: 3
+
+    },
+
+    {
+
+        qu: "Freddie Mercury died in which year?",
+        an: { 0: "1991", 1: "1992", 2: "2001", 3: "1977" },
         ca: 1
 
     },
 
     {
 
-        qu: "What color are her eyes?",
-        an: { 0: "brown", 1: "red", 2: "green", 3: "yellow" },
+        qu: "Steve Vai is known for what?",
+        an: { 0: "Piano", 1: "Vocals", 2: "Percussion", 3: "Guitar" },
+        ca: 4
+
+    },
+
+    {
+
+        qu: "What is Marilyn Manson's real name?",
+        an: { 0: "Brian Shaw", 1: "Ryan Gosling", 2: "Brian Warner", 3: "Tom Cruise" },
+        ca: 3
+
+    },
+
+    {
+
+        qu: "Who is also known as Skateboard P?",
+        an: { 0: "Pharrell Williams", 1: "P. Diddy", 2: "Papa Roach", 3: "Mike Portnoy" },
         ca: 1
+
+    },
+
+    {
+
+        qu: "Who was Ozzy Osbourne's first guitarist?",
+        an: { 0: "Randy Rhoads", 1: "Brian Shaw", 2: "Toni Iommi", 3: "Zakk Wylde" },
+        ca: 1
+
+    },
+
+    {
+
+        qu: "Who made the highly rated 1959 jazz album Kind of Blue?",
+        an: { 0: "Herbie Hancock", 1: "Wynton Marsalis", 2: "Miles Davis" },
+        ca: 3
+
+    },
+
+    {
+
+        qu: "Whose childhood hit was Fingertips?",
+        an: { 0: "Michael Jackson", 1: "Stevie Wonder", 2: "Robyn Fenty" },
+        ca: 2
+
+    },
+
+    {
+
+        qu: "Which guitar innovator and player has a range of Gibson Guitars named after him?",
+        an: { 0: "Brian Shaw", 1: "Stevie Nicks", 2: "Jethro Tull", 3: "Les Paul" },
+        ca: 4
 
     }
 ] // end questions
 
+var lastQuestion = questions[questions.length - 1];
+
 var questionObject = questions.length;
+
 console.log("Number of questions..." + questionObject);
+console.log(lastQuestion);
 
 z = 0;
 
 var gq = function() {
 
     if(z < questionObject) {
+
         $("#game-question").text(questions[z].qu);
+
     } else {
+
         $('#countdown').text("");
+
         clearInterval(intervalId);
+
         setTimeout(function () { flip(); }, 3000);
         
-        $("#so").on("click", function(){
+        $("#so").on("click", function() {
+
             console.log("lets play again!");
+            
             init();
         })
     }
@@ -145,8 +178,11 @@ gq();
 
 
 function clearList() {
+
     $("#answers").empty();
+
     playerKey.value = "";
+
     console.log("am i even really here??");
 }
 
@@ -173,84 +209,92 @@ var ga = function() {
 
 ga();
 
+
+
 function resetClock() {
-    // clearTimeout(countDown);
-    // n = 10;
-    // countDown();
+
     clearInterval(intervalId);
+
     intervalId = null;
-    n=10;
+
+    n=15;
+
     countDown();
 }
 
 function checkAnswer() {
+
     console.log(questions[y]);
+    
     if (playerKey.value == questions[y].ca) {
 
         correctAnswers++;
 
-        $("#wtf").text("Correct!").css({"display" : "block", "position": "absolute", "left": "50%", "-webkit-transform" : "translate(-50%)", "transform" : "translateX(-50%)", "padding" : "50px 200px", "background-color" : "rgba(0,0,0,.7)", "z-index" : "10000", "color" : "white"});
+        $("#solution").text("Correct!").css({"display" : "block", "color" : "black"});;
         
         setTimeout(function () { 
-            $("#wtf").text("").css("display", "none"); 
+
+            $("#solution").text("").css("display", "none"); 
         
         }, 1000);
-        
-        
 
     } else {
 
         incorrectAnswers++;
 
-        
-
-        $("#wtf").html("Incorrect!<br>The correct answer is: " + questions[y].ca).css({ "display": "block", "position": "absolute", "left": "50%", "-webkit-transform": "translate(-50%)", "transform": "translateX(-50%)", "text-align" : "center", "padding" : "50px", "width" : "400px", "background-color": "rgba(0,0,0,.7)", "z-index": "10000", "color" : "red"});
-
-        $(".nq").text("Next Question").css({"display": "block", "position": "absolute", "left": "50%", "bottom" : "20%", "-webkit-transform": "translate(-50%)", "transform": "translateX(-50%)", "z-index": "10000"});
+        $("#solution").html("Incorrect!<br>The correct answer is: " + questions[y].ca).css({"display" : "block", "color" : "red"});
 
         setTimeout(function () { 
-            $("#wtf").text("").css("display", "none");
-            $(".nq").css("display", "none");
-    }, 3000);
 
-        
+            $("#solution").text("").css("display", "none");
+
+    }, 5000);
+    
     }
 }
 
-
 $("#result").on("click", function () {
-    //alert("you clicked " + playerKey.value);
+    
     checkAnswer();
+
     z++;
+
     gq();
+
     y++;
+
     ga();
+
     resetClock();
+
 }) // end function
 
 function reset() {
+
     console.log("running reset....???");
+
     checkAnswer();
+
     z++;
+
     gq();
+
     y++;
+
     ga();
+
     resetClock();
 }
 
 
 
 function flip() {
-     $('.screen-1,.screen-2').toggle();
-    // $('.screen-1,.screen-2').fadeToggle("slow");
+
+    $('.screen-1,.screen-2').toggle();
+
     $("#correct").text("Correct Answers: " + correctAnswers);
+    
     $("#incorrect").text("Incorrect Answers: " + incorrectAnswers);
 }
 
-
-
-$("#test").on("click", function(){
-    $('.screen-1,.screen-2').toggle();
-    //$('.screen-1,.screen-2').fadeToggle("slow");
-});
 
